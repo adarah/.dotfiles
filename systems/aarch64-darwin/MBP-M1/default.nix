@@ -2,9 +2,12 @@
   pkgs,
   lib,
   ...
-}: {
-  adarah.httpie.enable = true;
-  adarah.nixvim.enable = true;
+}:
+with (lib.dots); {
+  adarah = {
+    httpie = enabled;
+    _1password = enabled;
+  };
 
   users.users.mag.home = "/Users/mag";
 
@@ -31,7 +34,6 @@
     "jq"
   ];
   homebrew.casks = [
-    "1password"
     "amethyst"
     "arc"
     "raycast"

@@ -1,10 +1,16 @@
 {
+  lib,
   pkgs,
   inputs,
   ...
-}: {
-  adarah.dust.enable = true;
-  adarah.starship.enable = true;
+}: with lib.dots; {
+  adarah= {
+    dust = enabled;
+    kitty = enabled;
+    nixvim = enabled;
+    shell = enabled;
+    starship = enabled;
+  };
 
   home.username = "work";
   home.homeDirectory = "/Users/work";

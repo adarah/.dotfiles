@@ -1,6 +1,5 @@
 {...}: {
   config = {
-
     nix.useDaemon = true;
     nix.extraOptions = ''
       extra-experimental-features = nix-command flakes
