@@ -1,0 +1,3 @@
+{...}: {
+  enabled = {enable = true;};
+}

@@ -19,8 +19,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    kitty-icon.url = "github:DinkDonk/kitty-icon";
-    kitty-icon.flake = false;
+    kitty-icon = {
+      url = "github:DinkDonk/kitty-icon";
+      flake = false;
+    };
+
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs:
@@ -32,21 +39,17 @@
       channels-config = {
         allowUnfree = true;
       };
-      # alias = {
-      #   shells = {
-      #   default = "default";
-      #   };
-      # };
+      snowfall = {
+        meta = {
+          name = ".dotfiles";
+          title = ".dotfiles";
+        };
 
-      # snowfall = {
-      #   namespace = "adarah";
-      #   meta = {
-      #     name = ".dotfiles";
-      #     title = ".dotfiles";
-      #   };
-      # };
-      # snowfallorg.users.mag.home = (import ./modules/darwin.myhome);
+        namespace = "dots";
+      };
 
-      formatter.aarch64-darwin = inputs.nixpkgs.legacyPackages.aarch64-darwin.alejandra;
+      outputs-builder = channels: {
+        formatter = channels.nixpkgs.alejandra;
+      };
     };
 }

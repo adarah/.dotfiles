@@ -3,6 +3,11 @@
   inputs,
   ...
 }: {
+  adarah.dust.enable = true;
+  adarah.starship.enable = true;
+
+  home.sessionPath = ["/opt/homebrew/bin"];
+  
   home.username = "mag";
   home.homeDirectory = "/Users/mag";
 
@@ -15,7 +20,6 @@
   home.packages = [
     pkgs.nil # Nix LSP
     pkgs.fx # JSON terminal viewer
-    pkgs.httpie
     pkgs.cachix # For devenv
   ];
 
@@ -25,7 +29,7 @@
   programs.zsh.syntaxHighlighting.enable = true;
   programs.zsh.defaultKeymap = "viins";
   programs.zsh.shellAliases = {
-    nixswitch = "darwin-rebuild switch --flake ~/Projects/nix-min";
+    nixre = "darwin-rebuild switch --flake ~/dotfiles";
     man = "batman";
   };
   programs.zsh.initExtra = ''
@@ -33,7 +37,6 @@
     bindkey -M viins '^?' backward-delete-char
   '';
 
-  programs.starship.enable = true;
   programs.kitty.package = pkgs.kitty.overrideAttrs (o: {
     postInstall =
       (o.postInstall or "")
