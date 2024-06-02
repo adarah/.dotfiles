@@ -30,7 +30,7 @@ in
           autoclose = enabled;
         };
 
-        options = {
+        opts = {
           number = true;
           relativenumber = true;
           shiftwidth = 2;

@@ -5,7 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
     snowfall-lib = {
-      url = "github:snowfallorg/lib?ref=dev";
+      url = "github:snowfallorg/lib";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -39,6 +39,7 @@
       channels-config = {
         allowUnfree = true;
       };
+
       snowfall = {
         meta = {
           name = ".dotfiles";
@@ -46,6 +47,14 @@
         };
 
         namespace = "dots";
+      };
+      
+      snowfallorg.users = {
+        mag = {
+          admin = true;
+        };
+
+        work = {};
       };
 
       outputs-builder = channels: {

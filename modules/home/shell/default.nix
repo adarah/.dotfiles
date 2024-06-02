@@ -28,7 +28,7 @@ in {
       # Enables backspace in insert mode
       bindkey -M viins '^?' backward-delete-char
     '';
-    
+
     programs.starship.enable = true;
     programs.fzf.enable = true;
     programs.zoxide.enable = true;

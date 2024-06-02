@@ -3,8 +3,9 @@
   pkgs,
   inputs,
   ...
-}: with lib.dots; {
-  adarah= {
+}:
+with lib.dots; {
+  adarah = {
     dust = enabled;
     kitty = enabled;
     nixvim = enabled;
@@ -12,7 +13,12 @@
     starship = enabled;
   };
 
-  home.username = "work";
-  home.homeDirectory = "/Users/work";
+  home.sessionPath = ["/opt/homebrew/bin"];
+
+  home.packages = [
+    pkgs.nil # Nix LSP
+    pkgs.fx # JSON terminal viewer
+    pkgs.cachix # For devenv
+  ];
   home.stateVersion = "24.05";
 }

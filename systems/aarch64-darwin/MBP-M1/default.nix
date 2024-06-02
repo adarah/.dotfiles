@@ -29,9 +29,7 @@ with (lib.dots); {
 
   homebrew.enable = true;
   homebrew.brews = [
-    "zoxide"
-    "watson"
-    "jq"
+    "saml2aws"
   ];
   homebrew.casks = [
     "amethyst"
