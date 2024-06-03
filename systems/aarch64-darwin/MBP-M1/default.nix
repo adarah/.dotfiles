@@ -19,7 +19,7 @@ with (lib.dots); {
   system.defaults.NSGlobalDomain.KeyRepeat = 2;
   system.defaults.dock.autohide = true;
   # Makes switching spaces faster
-  system.defaults.universalaccess.reduceMotion = true;
+  # system.defaults.universalaccess.reduceMotion = true;
   # Recommended by Amethyst docs
   system.defaults.dock.mru-spaces = false;
   # TODO: Once https://github.com/LnL7/nix-darwin/pull/699 is merged, I can define shortcuts in my config

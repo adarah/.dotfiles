@@ -11,6 +11,7 @@ with lib.dots; {
     nixvim = enabled;
     shell = enabled;
     starship = enabled;
+    devenv = enabled;
   };
 
   # For things installed via brew WITHOUT nix-darwin 
