@@ -16,6 +16,13 @@ with (lib.dots); {
       [[ssh-keys]]
       vault = "Homelab"
   '';
+  
+  dconf.settings = {
+    "org/virt-manager/virt-manager/connections" = {
+      autoconnect = ["qemu:///system"];
+      uris = ["qemu:///system"];
+    };
+  };
 
   dconf.settings = {  
     "org/gnome/settings-daemon/plugins/power" = {
