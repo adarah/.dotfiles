@@ -3,7 +3,7 @@
   pkgs,
   ...
 }:
-with lib.dots; {
+with (lib.dots); {
   adarah = {
     kitty = enabled;
     nixvim = enabled;
@@ -11,17 +11,10 @@ with lib.dots; {
     starship = enabled;
   };
 
-  # home.packages = [
-  #   pkgs.nil # Nix LSP
-  #   pkgs.cachix # For devenv
-  # ];
-  _1password-agent = {
-    config = pkgs.writeText ''
+  home.file."~/.config/1Password/ssh/agent.toml".text = ''
       [[ssh-keys]]
       vault = "Homelab"
-    '';
-
-  };
+  '';
 
   programs.git.enable = true;
   home.stateVersion = "24.05";
