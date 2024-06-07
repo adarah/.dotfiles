@@ -23,6 +23,7 @@ in {
     programs.zsh.shellAliases = {
       nixre = "darwin-rebuild switch --flake ~/.dotfiles";
       man = "batman";
+      s = "kitten ssh";
     };
     programs.zsh.initExtra = ''
       # Enables backspace in insert mode
