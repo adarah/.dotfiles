@@ -5,8 +5,6 @@
 }:
 with (lib.dots); {
 
-  imports = [ ./configuration.nix ];
-
   adarah = {
     kitty = enabled;
     nixvim = enabled;

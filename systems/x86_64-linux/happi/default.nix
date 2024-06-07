@@ -4,7 +4,7 @@
   ...
 }:
 {
-  imports = [ ./hardware-configuration.nix ];
+  imports = [ ./configuration.nix ];
 
   system.stateVersion = "24.05";
 }
