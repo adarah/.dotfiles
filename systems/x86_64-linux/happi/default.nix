@@ -3,13 +3,8 @@
   lib,
   ...
 }:
-with (lib.dots); {
-  # adarah = {
-  #   _1password = enabled;
-  # };
+{
+  imports = [ ./hardware-configuration.nix ];
 
-  imports = [ ./configuration.nix ];
-
-  programs.zsh.enable = true;
   system.stateVersion = "24.05";
 }

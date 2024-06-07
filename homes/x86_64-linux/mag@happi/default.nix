@@ -4,12 +4,17 @@
   ...
 }:
 with (lib.dots); {
+
+  imports = [ ./configuration.nix ];
+
   adarah = {
     kitty = enabled;
     nixvim = enabled;
     shell = enabled;
     starship = enabled;
   };
+  
+  users.users.mag.shell = pkgs.zsh;
 
   home.file."~/.config/1Password/ssh/agent.toml".text = ''
       [[ssh-keys]]
