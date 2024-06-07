@@ -3,7 +3,6 @@
   inputs,
   lib,
   pkgs,
-  stdenv,
   ...
 }: let
   cfg = config.adarah.kitty;
@@ -13,13 +12,13 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    programs.kitty.package = if stdenv.isDarwin then pkgs.kitty.overrideAttrs (o: {
+    programs.kitty.package = if pkgs.stdenv.isDarwin then pkgs.kitty.overrideAttrs (o: {
       postInstall =
         (o.postInstall or "")
         + ''
           cp ${inputs.kitty-icon}/kitty-dark.icns $out/Applications/kitty.app/Contents/Resources/kitty.icns
         '';
-    }) else null;
+    }) else pkgs.kitty;
     programs.kitty.enable = true;
     programs.kitty.font.name = "MesloLGS Nerd Font Mono";
     programs.kitty.font.size = 14;
