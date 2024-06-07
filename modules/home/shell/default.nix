@@ -21,7 +21,7 @@ in {
     programs.zsh.syntaxHighlighting.enable = true;
     programs.zsh.defaultKeymap = "viins";
     programs.zsh.shellAliases = {
-      nixre = "darwin-rebuild switch --flake ~/.dotfiles";
+      nixre = if pkgs.stdenv.isDarwin then "darwin-rebuild switch --flake ~/.dotfiles" else "sudo nixos-rebuild switch --flake ~/.dotfiles";
       man = "batman";
       s = "kitten ssh";
     };
