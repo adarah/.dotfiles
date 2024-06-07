@@ -6,5 +6,5 @@
 {
   programs.zsh.enable = true;
 
-  system.stateVersion = 4;
+  system.stateVersion = "24.05";
 }
