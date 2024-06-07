@@ -6,7 +6,7 @@
 with (lib.dots); {
   adarah = {
     httpie = enabled;
-    _1password = enabled;
+    _1password-gui = enabled;
   };
 
   users.users.mag.home = "/Users/mag";
