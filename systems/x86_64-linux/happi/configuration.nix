@@ -87,6 +87,9 @@
     packages = with pkgs; [
     #  thunderbird
     ];
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIQVtOkkuoWyLlYohTrzLv5GKndv66yM3TVU7Ox02Qw0"
+    ];
   };
 
   # Install firefox.
@@ -114,8 +117,9 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
-  services.openssh.passwordAuthentication = true;
-  services.openssh.permitRootLogin = "yes";
+  services.openssh.settings.PasswordAuthentication = false;
+  services.openssh.settings.KbdInteractiveAuthentication = false;
+
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

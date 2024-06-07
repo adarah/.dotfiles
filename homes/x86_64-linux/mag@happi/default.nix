@@ -12,12 +12,16 @@ with (lib.dots); {
     starship = enabled;
   };
   
-  users.users.mag.shell = pkgs.zsh;
-
-  home.file."~/.config/1Password/ssh/agent.toml".text = ''
+  home.file.".config/1Password/ssh/agent.toml".text = ''
       [[ssh-keys]]
       vault = "Homelab"
   '';
+
+  dconf.settings = {  
+    "org/gnome/settings-daemon/plugins/power" = {
+      sleep-inactive-ac-type = "nothing";
+    };
+  };
 
   programs.git.enable = true;
   home.stateVersion = "24.05";
