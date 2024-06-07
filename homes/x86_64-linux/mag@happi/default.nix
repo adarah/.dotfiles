@@ -15,6 +15,13 @@ with lib.dots; {
   #   pkgs.nil # Nix LSP
   #   pkgs.cachix # For devenv
   # ];
+  _1password-agent = {
+    config = pkgs.writeText ''
+      [[ssh-keys]]
+      vault = "Homelab"
+    '';
+
+  };
 
   programs.git.enable = true;
   home.stateVersion = "24.05";
